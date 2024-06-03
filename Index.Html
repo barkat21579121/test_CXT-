@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CX Technologies Test</title>
+  </head>
+  <body>
+    <h1>CX Technologies Test</h1>
+
+    <script>
+      //   {Question #1}
+      function sortDescending(arr) {
+        return arr.sort((a, b) => b - a);
+      }
+      const arr1 = [3, 2, 7, 4, 6, 9];
+      console.log("Q1:", sortDescending(arr1));
+
+      //   {Question #2}
+      function isPalindrome(str) {
+        const reversed = str.split("").reverse().join("");
+        return str === reversed;
+      }
+      const str1 = "madam";
+      const str2 = "doctor";
+      console.log("Q2:", isPalindrome(str1));
+      console.log("Q2:", isPalindrome(str2));
+
+      //   {Question #3}
+      function sumOfTwoLargest(arr) {
+        if (arr.length < 2) return null;
+        arr.sort((a, b) => b - a);
+        return arr[0] + arr[1];
+      }
+      const arr2 = [3, 7, 1, 5, 11, 19];
+      console.log("Q3:", sumOfTwoLargest(arr2));
+
+      //   {Question #4}
+      function findMissingNumbers(arr) {
+        const max = Math.max(...arr);
+        const missingNumbers = [];
+        for (let i = 0; i <= max; i++) {
+          if (!arr.includes(i)) {
+            missingNumbers.push(i);
+          }
+        }
+        return missingNumbers;
+      }
+      const arr3 = [3, 4, 9, 1, 7, 3, 2, 6];
+      console.log("Q4:", findMissingNumbers(arr3));
+
+      //   {Question #5}
+      function mostRepeatedNumber(arr) {
+        const count = {};
+        let maxCount = 0;
+        let mostRepeated = null;
+        arr.forEach((num) => {
+          count[num] = (count[num] || 0) + 1;
+          if (count[num] > maxCount) {
+            maxCount = count[num];
+            mostRepeated = num;
+          }
+        });
+        return `${mostRepeated} is repeated ${maxCount} times.`;
+      }
+      const arr4 = [4, 3, 5, 6, 4, 7, 9, 2, 4, 6, 3, 4, 6, 3, 4, 8, 5, 1, 5];
+      console.log("Q5:", mostRepeatedNumber(arr4));
+
+      //   {Question #6}
+      function rotateArray(arr) {
+        if (arr.length === 0) return arr;
+        const lastElement = arr.pop();
+        arr.unshift(lastElement);
+        return arr;
+      }
+      const arr5 = [3, 8, 9, 7, 6];
+      console.log("Q6:", rotateArray(arr5));
+    </script>
+  </body>
+</html>
